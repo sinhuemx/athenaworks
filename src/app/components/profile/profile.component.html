@@ -1,0 +1,29 @@
+<div class="grid grid-center">
+    <div class="col athena-pad-30">
+        <div class="col">
+            <a routerLink="/users"><button mat-button color="primary">{{ back }}</button></a>
+        </div>
+        <mat-card class="athena-card" *ngFor="let data of datos">
+            <div class="athena-blur-text">
+                <figure>
+                    <img class="img" src="{{ data.picture.large }}">
+                </figure>
+                <h6>{{ data.name.title }} {{ data.name.first }} {{ data.name.last }}</h6>
+            </div>
+            <img mat-card-image class="athena-blur-image" src="{{ data.picture.large }}">
+            <mat-card-content>
+                    <mat-label class="athena-gray">Bio description</mat-label>
+                    <h6>{{ data.location.country }} {{ data.location.city }} {{ data.location.state }}</h6>
+                    <mat-label class="athena-gray">The direction of the profession</mat-label>
+                    <h6>{{ data.location.postcode }}</h6>
+                    <mat-label class="athena-gray">Email Adress</mat-label>
+                    <h6>{{ data.email }}</h6>
+                    <mat-label class="athena-gray">Phone Number</mat-label>
+                    <h6>{{ data.phone }}</h6>
+                </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+      

@@ -1,0 +1,25 @@
+<app-search></app-search>
+<div class="grid">
+    <div class="col athena-pad-30" >
+            <mat-card (click)="getProfile( data )" *ngFor="let data of datos">
+                <div class="grid-center">
+                    <div class="col-2">
+                        <img class="img athena-avatar" src="{{ data.picture.thumbnail }}">
+                    </div>
+                    <div class="col">
+                        <div class="athena-space-small"></div>
+                        <a class="">
+                            <mat-card-title 
+                            matTooltip="{{ data.name.title }} {{ data.name.first }} {{ data.name.last }}"
+                            [matTooltipClass]="{ 'athena-tooltip': true }">
+                                {{ data.name.first }}<span>&nbsp;{{ data.name.last }}</span>
+                            </mat-card-title>
+                        </a>
+                    </div>   
+                </div>
+            </mat-card>
+    </div>
+</div>
+
+
+

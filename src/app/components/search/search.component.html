@@ -1,0 +1,21 @@
+<div class="athena-space-small athena-pad-5">
+    <div class="grid-center grid-3_xs-1 athena-pad-20">
+        <div class="col athena-inline">
+            <h5>{{ title }}</h5>
+        </div>
+        <div class="col athena-inline">
+            <form [formGroup]="stateForm" class="athena-pad-5">
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Pick One" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+                        <mat-autocomplete #autoGroup="matAutocomplete">
+                            <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                            <mat-option *ngFor="let name of group.names" [value]="name">
+                                {{ name }}
+                            </mat-option>
+                        </mat-optgroup>
+                        </mat-autocomplete>
+                    </mat-form-field>
+            </form>
+        </div>
+    </div>
+</div>
